@@ -1,0 +1,30 @@
+<template name="AppLayout">
+	<!-- navbar  - you will be putting the login functions here -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Site Ace</a>
+			</div>
+
+			<ul class="menu">
+				<li>
+					<a href="{{pathFor route='Main'}}">Main</a>
+				</li>
+				<li>
+					<a href="{{pathFor route='Sites'}}">Sites</a>
+				</li>
+			</ul>
+
+			<div class="login">
+				{{> loginButtons align="right"}}
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		{{> yield "welcome"}}
+
+		{{! > website_form}}
+		{{! > website_list}}
+	</div>
+</template>
