@@ -1,5 +1,7 @@
 Template.website_list.helpers({
 	websites: function(){
-		return Websites.find({});
+		return Websites.find({}, {
+			sort: {votesUp: -1}
+		});
 	}
 });

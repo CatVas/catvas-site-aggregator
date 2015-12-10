@@ -1,22 +1,37 @@
 Template.website_item.events({
 	"click .js-upvote":function(event){
-		// example of how you can access the id for the website in the database
-		// (this is the data context for the template)
-		var website_id = this._id;
-		console.log("Up voting website with id "+website_id);
-		// put the code in here to add a vote to a website!
+		var siteId = this._id;
+		var userId = Meteor.userId();
 
-		return false;// prevent the button from reloading the page
-	}, 
+		if(!userId){
+			alert('Please log in to vote the sites');
+			return false;
+		}
+
+		Meteor.call('voteSite', 1, siteId, userId, function(err, res){
+			if(err){
+				throw err;
+			}
+		});
+
+		return false;
+	},
+
 	"click .js-downvote":function(event){
+		var siteId = this._id;
+		var userId = Meteor.userId();
 
-		// example of how you can access the id for the website in the database
-		// (this is the data context for the template)
-		var website_id = this._id;
-		console.log("Down voting website with id "+website_id);
+		if(!userId){
+			alert('Please log in to vote the sites');
+			return false;
+		}
 
-		// put the code in here to remove a vote from a website!
+		Meteor.call('voteSite', -1, siteId, userId, function(err, res){
+			if(err){
+				throw err;
+			}
+		});
 
-		return false;// prevent the button from reloading the page
+		return false;
 	}
 });
