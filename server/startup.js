@@ -1,6 +1,7 @@
 // start up function that creates entries in the Websites databases.
 Meteor.startup(function () {
 // code to run on server at startup
+	/*
 	if(!Websites.findOne()){
 		console.log("No websites yet. Creating starter data.");
 		Websites.insert({
@@ -48,4 +49,5 @@ Meteor.startup(function () {
 			votesDownBy: []
 		});
 	}
+	*/
 });

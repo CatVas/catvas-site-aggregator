@@ -1,15 +1,38 @@
 Template.website_form.events({
-	"click .js-toggle-website-form":function(event){
+	"click .js-toggle-website-form": function(event){
 		$("#website_form").toggle('slow');
-	}, 
-	"submit .js-save-website-form":function(event){
+	},
 
-		// here is an example of how to get the url out of the form:
+	"submit .js-save-website-form": function(event){
+		var userId = Meteor.userId();
 		var url = event.target.url.value;
-		console.log("The url they entered is: "+url);
-		
-		//  put your website saving code in here!	
+		var title = event.target.title.value;
+		var description = event.target.description.value;
 
-		return false;// stop the form submit from reloading the page
+		if(!userId){
+			throw 'Please, log in to add a site';
+			return false;
+		}
+		if(!url){
+			//throw 'URL length can not be equal to zero.';
+			alert('URL length can not be equal to zero.');
+			return false;
+		}
+
+		var options = {
+			url: url,
+			title: title || 'Untitled site',
+			description: description || 'This site is without description.',
+			postedBy: userId
+		};
+
+		//console.dir(options);
+		Meteor.call('insertSite', options, function(err, res){
+			if(err){
+				throw err;
+			}
+		});
+
+		return false;
 	}
 });

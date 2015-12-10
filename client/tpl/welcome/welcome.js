@@ -1,6 +1,6 @@
 Template.Welcome.helpers({
 	greetings: function(){
-		if( Meteor.userId() ){
+		if( Meteor.user() ){
 			var userName = Meteor.user().username;
 
 			return userName + ', welcome to Site aggregator!';

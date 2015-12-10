@@ -3,6 +3,18 @@
 	display: none;
 }
 
+.js-search-form {
+	margin: 1.3em 0;
+}
+
+.list-1 {}
+.list-1 li {
+	margin: 1.5em 0;
+}
+.list-1 .list-1-hd {
+	margin: 0;
+}
+
 .login {
 	float: right;
 	margin: 15px 0 0;
@@ -22,3 +34,7 @@
 	margin-left:0;
 }
 .menu li a {}
+
+.warning {
+	color: #f00;
+}

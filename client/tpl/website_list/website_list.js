@@ -1,5 +1,5 @@
 Template.website_list.helpers({
-	websites:function(){
+	websites: function(){
 		return Websites.find({});
 	}
 });

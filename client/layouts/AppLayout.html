@@ -24,7 +24,10 @@
 	<div class="container">
 		{{> yield "welcome"}}
 
-		{{! > website_form}}
-		{{! > website_list}}
+		{{> yield "website_form"}}
+
+		{{> yield "search_form"}}
+
+		{{> yield "website_list"}}
 	</div>
 </template>
