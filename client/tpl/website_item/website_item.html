@@ -1,16 +1,30 @@
 <!-- template that displays individual website entries -->
 <template name="website_item">
-	<li>
-		<p class="list-1-hd"><a href="{{url}}" target="_blank">{{title}}</a></p>
+	<li class="{{#if siteExists}}list-1-exists{{/if}}">
+		<!--p class="list-1-hd"><a href="{{url}}" target="_blank">{{title}}</a></p-->
+		<p class="list-1-hd">
+			<a href="/sites/{{_id}}">{{title}}</a>
+		</p>
+		<p class="list-1-added">Added: {{createdOn}}</p>
 		<p>{{description}}</p>
 
 		{{#if currentUser}}
-		<a href="#" class="btn btn-default js-upvote">
+		<a href="#" class="btn btn-default">
 			<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+			<span>{{votesUp}}</span>
+		</a>
+		<a href="#" class="btn btn-default">
+			<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+			<span>{{votesDown}}</span>
+		</a>
+		<!--a href="#" class="btn btn-default js-upvote">
+			<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+			<span>{{votesUp}}</span>
 		</a>
 		<a href="#" class="btn btn-default js-downvote">
 			<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-		</a>
+			<span>{{votesDown}}</span>
+		</a-->
 		{{/if}}
 		<!-- you will be putting your up and down vote buttons in here! -->
 	</li>

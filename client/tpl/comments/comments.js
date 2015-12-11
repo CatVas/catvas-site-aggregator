@@ -1,0 +1,1 @@
+Template.Comments.helpers({});

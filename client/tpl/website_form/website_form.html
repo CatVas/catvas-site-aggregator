@@ -1,8 +1,13 @@
 <template name="website_form">
 	{{#if currentUser}}
-	<a class="btn btn-default js-toggle-website-form" href="#">
-  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-	</a>
+	<div class="website_form-hd">
+		<a class="btn btn-default js-toggle-website-form" href="#">
+	  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		</a>
+		{{#if siteExists}}
+		<p class="website_form-warn">Site with such URL already exists. Please, choose another URL.</p>
+		{{/if}}
+	</div>
 	
 	<div id="website_form" class="hidden_div">
 		<form class="js-save-website-form">

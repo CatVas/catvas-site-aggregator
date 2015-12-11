@@ -1,0 +1,36 @@
+<template name="website_info">
+	<div class="row">
+		<div class="col-xs-12 siteinfo">
+			<h2 class="siteinfo-hd">
+				<a href="{{url}}" target="_blank">{{title}}</a>
+			</h2>
+			<p class="siteinfo-added">Added: {{createdOn}}</p>
+
+			<a href="#" class="btn btn-default">
+				<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+				<span>{{votesUp}}</span>
+			</a>
+			<a href="#" class="btn btn-default">
+				<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+				<span>{{votesDown}}</span>
+			</a>
+
+			<div class="siteinfo-desc">
+				<p>{{description}}</p>
+			</div>
+
+			{{#if currentUser}}
+			<a href="#" class="btn btn-default js-upvote">
+				<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+				<span>Vote Up</span>
+			</a>
+			<a href="#" class="btn btn-default js-downvote">
+				<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+				<span>Vote Down</span>
+			</a>
+			{{/if}}
+
+			{{> Comments}}
+		</div>
+	</div>
+</template>

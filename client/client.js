@@ -4,3 +4,10 @@ Accounts.ui.config({
 
 /*--- Subscriptions ---*/
 subsWebsites = Meteor.subscribe('Websites');
+
+/*--- Sessions ---*/
+Tracker.autorun(function(){
+	if( !Meteor.userId() ){
+		Session.set('siteExists', false);
+	}
+});

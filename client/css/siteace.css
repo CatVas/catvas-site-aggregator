@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+html, body {
+	background: #fff;
+}
+
 .hidden_div {
 	display: none;
 }
@@ -9,10 +13,22 @@
 
 .list-1 {}
 .list-1 li {
-	margin: 1.5em 0;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff;
+	margin: 0.5em 0;
+	padding: 0.3em 0 0.8em;
+}
+.list-1 .list-1-added {
+	color:#555;
+	font-size:0.8em;
+	margin: 0;
 }
 .list-1 .list-1-hd {
 	margin: 0;
+}
+.list-1 .list-1-exists {
+	border-bottom: 1px solid #f00;
+	border-top: 1px solid #f00;
 }
 
 .login {
@@ -35,6 +51,38 @@
 }
 .menu li a {}
 
+.siteinfo {}
+.siteinfo h2 {}
+.siteinfo .siteinfo-added {
+	color: #333;
+	font-size: 0.8em;
+	margin: 0 0 1em;
+}
+.siteinfo .siteinfo-desc {
+	margin: 1em 0;
+}
+
 .warning {
 	color: #f00;
+}
+
+.website_form-hd {
+	margin:0 0 0.5em;
+}
+.website_form-hd:after {
+	clear: both;
+	content: '.';
+	display: block;
+	height: 0;
+	visibility: hidden;
+	width: 0;
+}
+.website_form-hd .btn {
+	float: left;
+	margin:0 1em 0 0;
+}
+.website_form-hd .website_form-warn {
+	color: #f00;
+	float: left;
+	margin:0.5em 0 0;
 }

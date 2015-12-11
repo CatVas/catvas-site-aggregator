@@ -1,0 +1,9 @@
+<template name="layoutSite">
+	{{> Navbar}}
+
+	<div class="container">
+		{{> yield "welcome"}}
+
+		{{> yield "website_info"}}
+	</div>
+</template>

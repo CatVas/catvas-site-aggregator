@@ -1,0 +1,13 @@
+<template name="layoutSites">
+	{{> Navbar}}
+
+	<div class="container">
+		{{> yield "welcome"}}
+
+		{{> yield "website_form"}}
+
+		{{> yield "search_form"}}
+
+		{{> yield "website_list"}}
+	</div>
+</template>

@@ -3,6 +3,10 @@ Router.configure({
 });
 
 Router.route('/', function () {
+	Session.set('siteExists', false);
+
+	this.layout('layoutWelcome');
+
 	this.render('Welcome', {
 		to: 'welcome'
 	});
@@ -11,6 +15,10 @@ Router.route('/', function () {
 });
 
 Router.route('/sites', function () {
+	Session.set('siteExists', false);
+
+	this.layout('layoutSites');
+
 	this.render('Welcome', {
 		to: 'welcome'
 	});
@@ -28,4 +36,24 @@ Router.route('/sites', function () {
 	});
 }, {
 	name: 'Sites'
+});
+
+Router.route('/sites/:_id', function () {
+	Session.set('siteExists', false);
+
+	this.layout('layoutSite', {
+		data: function(){
+			return Websites.findOne({_id: this.params._id});
+		}
+	});
+
+	this.render('Welcome', {
+		to: 'welcome'
+	});
+
+	this.render('website_info', {
+		to: 'website_info'
+	});
+}, {
+	name: 'Site'
 });

@@ -1,6 +1,13 @@
+Template.website_form.helpers({
+	siteExists: function(){
+		return !!Session.get('siteExists');
+	}
+});
+
 Template.website_form.events({
 	"click .js-toggle-website-form": function(event){
 		$("#website_form").toggle('slow');
+		Session.set('siteExists', false);
 	},
 
 	"submit .js-save-website-form": function(event){
@@ -31,6 +38,10 @@ Template.website_form.events({
 			if(err){
 				throw err;
 			}
+
+			event.target.url.value = '';
+			event.target.title.value = '';
+			event.target.description.value = '';
 		});
 
 		return false;
