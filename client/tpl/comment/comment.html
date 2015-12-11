@@ -1,0 +1,11 @@
+<template name="Comment">
+	<li>
+		<p class="l-comments-hd">{{title}}</p>
+		<!--p class="l-comments-info">By {{author}}, added: {{added}}</p-->
+		<p class="l-comments-info">Added: {{added}}</p>
+		<p>{{text}}</p>
+		{{#if currentUser}}
+		<!--i class="l-comments-delete" title="Delete comment">X</i-->
+		{{/if}}
+	</li>
+</template>

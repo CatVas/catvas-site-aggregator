@@ -3,6 +3,7 @@ Accounts.ui.config({
 });
 
 /*--- Subscriptions ---*/
+subsComments = Meteor.subscribe('Comments');
 subsWebsites = Meteor.subscribe('Websites');
 
 /*--- Sessions ---*/

@@ -11,6 +11,41 @@ html, body {
 	margin: 1.3em 0;
 }
 
+.l-comments {
+	list-style: none;
+	margin-bottom: 2em;
+	margin-top: 1em;
+	padding: 0;
+}
+.l-comments li {
+	/*border-bottom: 1px solid #888;*/
+	border-top: 1px solid #888;
+	margin: 0;
+	padding: 0.5em 0 0.1em;
+	position: relative;
+}
+.l-comments .l-comments-delete {
+	color: #555;
+	cursor: pointer;
+	font-weight: bold;
+	position: absolute;
+	right: 1em;
+	font-style: normal;
+	top: 0;
+}
+.l-comments .l-comments-delete:hover {
+	color: #000;
+}
+.l-comments .l-comments-hd {
+	font-weight: bold;
+	margin: 0;
+}
+.l-comments .l-comments-info {
+	color: #333;
+	font-size: 0.8em;
+	margin: 0 0 0.3em;
+}
+
 .list-1 {}
 .list-1 li {
 	border-bottom: 1px solid #fff;

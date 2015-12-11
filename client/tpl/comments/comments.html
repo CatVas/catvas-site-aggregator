@@ -1,5 +1,11 @@
 <template name="Comments">
-	<ul class="siteinfo-comments">
-		<li>Comment</li>
+	<ul class="l-comments">
+		{{#each comments}}
+			{{> Comment}}
+		{{/each}}
 	</ul>
+
+	{{#if currentUser}}
+		{{> comment_form}}
+	{{/if}}
 </template>
