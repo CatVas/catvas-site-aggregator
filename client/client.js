@@ -10,5 +10,12 @@ subsWebsites = Meteor.subscribe('Websites');
 Tracker.autorun(function(){
 	if( !Meteor.userId() ){
 		Session.set('siteExists', false);
+		Session.set('searchSitePattern', null);
 	}
 });
+
+
+if( Session.get('searchSitePattern') ){
+	Session.set('searchSitePattern', null);
+}
+/*--- /Sessions ---*/

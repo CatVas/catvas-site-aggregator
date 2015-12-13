@@ -4,6 +4,7 @@ Router.configure({
 
 Router.route('/', function () {
 	Session.set('siteExists', false);
+	Session.set('searchSitePattern', null);
 
 	this.layout('layoutWelcome');
 
@@ -16,6 +17,7 @@ Router.route('/', function () {
 
 Router.route('/sites', function () {
 	Session.set('siteExists', false);
+	Session.set('searchSitePattern', null);
 
 	this.layout('layoutSites');
 

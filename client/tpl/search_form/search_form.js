@@ -4,4 +4,8 @@ Template.search_form.events({
 	}
 });
 
-Template.search_form.helpers({});
+Template.search_form.helpers({
+	value: function(){
+		return '';
+	}
+});

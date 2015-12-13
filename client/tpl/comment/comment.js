@@ -1,13 +1,9 @@
 Template.Comment.helpers({
-	author: function(){
-		/*return Meteor.users.findOne({
-			_id: this.author
-		}, {
-			fields: {
-				username: 1
-			}
-		}).username;*/
-		return this.author;
+	/*author: function(){
+		return this.authorName;
+	}*/
+	canDelete: function(){
+		return Meteor.userId() === this.author;
 	}
 });
 
